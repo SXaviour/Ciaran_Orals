@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&family=Outfit:wght@400&display=swap');
+
+body {
+  margin: 0;
+  background: #3da1d1;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+.congrats {
+  position: relative;
+  max-width: 90%;
+  width: 550px;
+  padding: 20px 10px;
+  text-align: center;
+  z-index: 2;
+}
+
+h1 {
+  transform-origin: 50% 50%;
+  font-size: 50px;
+  font-family: 'Sigmar One', cursive;
+  cursor: pointer;
+  margin: 0;
+  z-index: 2;
+}
+
+.congrats .name {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Star explosion */
+.blob {
+  height: 50px;
+  width: 50px;
+  color: #ffcc00;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  display: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* Bubbling emojis */
+#bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: float 4s linear infinite;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* 📱 Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+    
+  }
+
+  .congrats .name {
+    font-size: 1rem;
+  }
+
+  .blob {
+    font-size: 0.9rem;
+    height: 30px;
+    width: 30px;
+  }
+
+  .bubble {
+    font-size: 1rem;
+  }
+}
